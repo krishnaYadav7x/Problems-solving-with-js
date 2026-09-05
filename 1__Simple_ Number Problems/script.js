@@ -75,11 +75,35 @@ function printAllNumDivisibleBy3and5uptoN(n){
 }
 
 
+//q10
 
+function sumOfOddNumsUptoN(n){
+  let sum = 0
+  for(let i=1;i<=n;i++){
+    if(i%2===1){
+      sum+=i
+    }
+  }
+  return sum
+}
 
+//q11
 
+function printCubesFrom1toN(n){
+  for(let i=1; i<=n;i++){
+    console.log(i**3);
+  }
+}
 
+//q12
 
+function printNumbersBothPerfectSquaresAndEven(start,end){
+  for(let i=start;i<=end;i++){
+    if(i%2===0 && Number.isInteger(Math.sqrt(i))){
+      console.log(i);
+    }
+  }
+}
 
 
 
