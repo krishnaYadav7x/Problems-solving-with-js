@@ -106,9 +106,18 @@ function printNumbersBothPerfectSquaresAndEven(start,end){
 }
 
 
+//q13
+//optimized
 
+function sumOfNumsFromStartToEnd(start,end){
+  return (end*(end+1))/2-((start-1)*start)/2
+}
 
+//optimized
 
+function sumOfNumbersFrom1UptoN(n){
+  return n*(n+1)/2
+}
 
 
 
