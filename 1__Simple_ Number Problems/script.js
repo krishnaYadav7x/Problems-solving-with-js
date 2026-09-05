@@ -64,6 +64,15 @@ function printSquaresOfNumbersFrom1toN(n){
   }
 }
 
+//q8
+
+function printAllNumDivisibleBy3and5uptoN(n){
+  for(let i=1;i<=n;i++){
+    if(i%3===0&& i%5===0){
+      console.log(i);
+    }
+  }
+}
 
 
 
