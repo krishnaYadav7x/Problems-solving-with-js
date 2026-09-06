@@ -48,39 +48,20 @@ function calculateElectricityBill(unit) {
 
 // function isVowelOrConsonant(char){
 //   if(char===''|| char.length!==1)return 'enter a vowel or a consonant'
- 
+
 // }
 
+function isVowelOrConsonant(character) {
+  if (!/^[a-z]$/i.test(character)) return "Not vowel or consonant";
 
+  const vowel = "aeiou";
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  if (vowel.includes(character.toLowerCase())) {
+    return "vowel";
+  } else {
+    return "consonant";
+  }
+}
 
 
 
