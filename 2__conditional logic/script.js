@@ -44,12 +44,7 @@ function calculateElectricityBill(unit) {
   return bill;
 }
 
-//q4 Check if a Character is a Vowel or Consonant
-
-// function isVowelOrConsonant(char){
-//   if(char===''|| char.length!==1)return 'enter a vowel or a consonant'
-
-// }
+//q4
 
 function isVowelOrConsonant(character) {
   if (!/^[a-z]$/i.test(character)) return "Not vowel or consonant";
@@ -62,6 +57,65 @@ function isVowelOrConsonant(character) {
     return "consonant";
   }
 }
+
+//q5
+
+function isALeapYear(year) {
+  if (year % 4 === 0 && year % 100 !== 0) {
+    return "Leap year";
+  } else if (year % 400 === 0) {
+    return "Leap year";
+  }
+
+  return "Not leap year";
+}
+
+//q6
+
+function checkCharacterType(character) {
+  const asciiCode = character.toString().charCodeAt();
+  if (asciiCode >= 48 && asciiCode <= 57) {
+    return "Number";
+  } else if (asciiCode >= 65 && asciiCode <= 90) {
+    return "UpperCase";
+  } else if (asciiCode >= 97 && asciiCode <= 122) {
+    return "LowerCase";
+  } else if (
+    (asciiCode >= 123 && asciiCode <= 126) ||
+    (asciiCode >= 33 && asciiCode <= 47) ||
+    (asciiCode >= 58 && asciiCode <= 64) ||
+    (asciiCode >= 91 && asciiCode <= 96)
+  ) {
+    return "Special Char";
+  }
+  return "Invalid character";
+}
+
+//q7
+
+function calculateIncomeTax(income) {
+  let tax;
+  if (income <= 250000) return 0;
+  if (income >= 250001 && income <= 500000) {
+    tax = ((income - 250000) * 5) / 100;
+  } else if (income >= 500001 && income <= 1000000) {
+    tax = ((income - 500000) * 20) / 100 + (250000 * 5) / 100;
+  } else if (income > 1000000) {
+    tax =
+      (250000 * 5) / 100 +
+      (500000 * 20) / 100 +
+      ((income - 1000000) * 30) / 100;
+  }
+  return +tax.toFixed(2);
+}
+
+//q8
+
+
+
+
+
+
 
 
 
