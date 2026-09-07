@@ -111,14 +111,25 @@ function calculateIncomeTax(income) {
 
 //q8
 
-
-
-
-
-
-
-
-
+function checkTriangleType(a, b, c) {
+  if(!a||!b||!c) return
+  const larger = Math.max(a, b, c);
+  const shorter = Math.min(a, b, c);
+  const secondShorter = a + b + c - (larger + shorter);
+  if (shorter ** 2 + secondShorter ** 2 === larger ** 2) {
+    return "Right angled triangle";
+  } else if (
+    larger !== shorter &&
+    larger !== secondShorter &&
+    shorter !== secondShorter
+  ) {
+    return "Scalene";
+  }else if (a === b && a === c && b === c) {
+    return "Equilateral";
+  } else if (a === b || a === c || b === c) {
+    return "Isosceles";
+  }
+}
 
 
 
