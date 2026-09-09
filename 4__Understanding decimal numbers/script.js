@@ -24,3 +24,34 @@ function separateWholeAndFractionalParts(num){
 }
 
 
+function countWholeAndFractionDigit(num){
+  let fractionalPart = num%1
+  let integerPart = num-fractionalPart
+  let wholeCount = 0
+  let fractionCount =0
+  while (fractionalPart % 1 !== 0) {
+    fractionalPart = fractionalPart * 10;
+    fractionCount++;
+  }
+  while(integerPart>0){
+    integerPart = Math.floor(integerPart/10)
+    wholeCount++
+  }
+  return {wholeCount,fractionCount}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
