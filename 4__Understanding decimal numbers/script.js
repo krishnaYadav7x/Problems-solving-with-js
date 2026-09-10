@@ -41,9 +41,22 @@ function countWholeAndFractionDigit(num){
 }
 
 
+function reverseNumber(num){   //[6,7,8,9]
+  let reverseNumber = 0
+  for(let i=0; i<num.length;i++){
+    reverseNumber+=num[i]*10**[i]
+  }
+  return reverseNumber
+}
 
-
-
+function generateDecimalNum(whole,fraction){
+  let number = [...whole,...fraction]
+  let result = 0
+  for (let i = 0; i < number.length; i++) {
+    result+=number[i]*(10**(number.length-i-1))
+  }
+  return result/(10**fraction.length)
+}
 
 
 
