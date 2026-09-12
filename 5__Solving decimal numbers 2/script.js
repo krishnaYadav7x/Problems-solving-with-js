@@ -129,11 +129,39 @@ function isStrongNum(n){
   return eachDigitsFactorialSum === n
 }
 
+function isAutomorphicNumber(n){
+  let number = n
+  let square = n**2
+  let digitCount = 0
+  while(number>0){
+    digitCount+=1
+    number=Math.floor(number/10)
+  }
+  return n === square % 10 ** digitCount;
+}
 
+function findFrequency(n){
+  const frequencyObject = {}
+  let number = n
+  while(number>0){
+    frequencyObject[number % 10]
+      ? frequencyObject[number % 10]++
+      : frequencyObject[number % 10]=1
+      number = Math.floor(number/10)
+  }
+  return frequencyObject
+}
 
-
-
-
+function isHarshadNumber(n){
+  if(n<=0) return false
+  let number = n
+  let digitsSum = 0
+  while(number>0){
+    digitsSum+=number%10
+    number = Math.floor(number/10)
+  }
+  return n%digitsSum===0
+}
 
 
 
