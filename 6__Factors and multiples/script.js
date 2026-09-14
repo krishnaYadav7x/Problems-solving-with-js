@@ -34,67 +34,98 @@ function findHCF(n1, n2) {
     large = small;
     small = remainder;
   }
-  return small
+  return small;
 }
 
-function findLCM(n1,n2){
-  let dividend = n1>n2?n1:n2
-  let divisor = n1<n2?n1:n2
-  while(dividend%divisor!==0){
-    let remainder = dividend%divisor
-    dividend = divisor
-    divisor = remainder
+function findLCM(n1, n2) {
+  let dividend = n1 > n2 ? n1 : n2;
+  let divisor = n1 < n2 ? n1 : n2;
+  while (dividend % divisor !== 0) {
+    let remainder = dividend % divisor;
+    dividend = divisor;
+    divisor = remainder;
   }
-  return n1*n2/divisor
+  return (n1 * n2) / divisor;
 }
 
-function findTotalNumberOfFactors(n){
-  let count = 0
-  for(let i=1; i<=Math.sqrt(n); i++){
-    if(n%i===0){
-      count+=1
+function findTotalNumberOfFactors(n) {
+  let count = 0;
+  for (let i = 1; i <= Math.sqrt(n); i++) {
+    if (n % i === 0) {
+      count += 1;
     }
-    if(i!==n/i){
-      count+=1
-    }
-  }
-  return count
-}
-
-function sumOfAllFactors(n){
-  let sum = 0
-  for(let i=1; i<=Math.sqrt(n); i++){
-    if(n%1===0){
-      sum+=i
-    }
-    if(i!==n/i){
-      sum+=(n/i)
+    if (i !== n / i) {
+      count += 1;
     }
   }
-  return sum
+  return count;
 }
 
-function greatestFactor(n){
-  let greatestFactor = -Infinity
-  for(let i=1; i<=Math.sqrt(n);i++){
-    if(n%i===0){
-      if(i>greatestFactor){
-        greatestFactor = i
+function sumOfAllFactors(n) {
+  let sum = 0;
+  for (let i = 1; i <= Math.sqrt(n); i++) {
+    if (n % 1 === 0) {
+      sum += i;
+    }
+    if (i !== n / i) {
+      sum += n / i;
+    }
+  }
+  return sum;
+}
+
+function greatestFactor(n) {
+  let greatestFactor = -Infinity;
+  for (let i = 1; i <= Math.sqrt(n); i++) {
+    if (n % i === 0) {
+      if (i > greatestFactor) {
+        greatestFactor = i;
       }
     }
-    
-      if(n/i>greatestFactor&&n/i!==n){
-        greatestFactor = n/i
-      }
-    
+
+    if (n / i > greatestFactor && n / i !== n) {
+      greatestFactor = n / i;
+    }
   }
-  return greatestFactor
+  return greatestFactor;
 }
 
+function isPerfectNumber(n) {
+  if(n<=1) return false
+  let allFactorsSum = 0;
+  for (let i = 1; i <= Math.sqrt(n); i++) {
+    if (n % i === 0) {
+      allFactorsSum += i;
+      if (i !== n / i && n / i !== n) {
+        allFactorsSum += n / i;
+      }
+    }
+  }
 
+  return allFactorsSum === n;
+}
 
+function HCFandLCMofThreeNumbers(a,b,c){
+  let firstLarge = a>b?a:b>c?b:c
+  let small = a<b?a:b<c?b:c
+  let secondLarge = (a+b+c)-(firstLarge+small)
 
+  
+ 
 
+  while(secondLarge%small!==0){
+    let remainder = secondLarge%small
+    secondLarge = small
+    small = remainder
+  }
+
+  while(firstLarge%small!==0){
+    let remainder = firstLarge%small
+    firstLarge = small
+    small = remainder
+  }
+  return {hcf:small}
+}
 
 
 
