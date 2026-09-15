@@ -29,11 +29,28 @@ function printFibonacci(limit) {
   return fibonacci
 }
 
+function nthFibonacci(n){
+  return +(
+    1 /
+    Math.sqrt(5)*(((1 + Math.sqrt(5)) / 2) ** n - ((1 - Math.sqrt(5)) / 2) ** n)
+  ).toFixed(2)
 
+  //formula of finding nth fibonacci number.
+}
 
+function isFibonacci(n){
+  if (
+    Number.isInteger(Math.sqrt(5 * n ** 2 + 4)) ||
+    Number.isInteger(Math.sqrt(5 * n ** 2 - 4))
+  )
+    return true;
+}
 
+// function printPrimeNumbers(limit){
+//   for(let i=1; i<=Math.sqrt(limit); i+=2){
 
-
+//   }
+// }
 
 
 
