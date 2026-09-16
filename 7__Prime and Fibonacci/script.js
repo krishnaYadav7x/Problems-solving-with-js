@@ -24,21 +24,21 @@ function printFibonacci(limit) {
   let fibonacci = [0, 1];
   let length = fibonacci.length;
   for (let i = 1; i <= limit - length; i++) {
-    fibonacci.push(fibonacci[i]+fibonacci[fibonacci.length-2])
+    fibonacci.push(fibonacci[i] + fibonacci[fibonacci.length - 2]);
   }
-  return fibonacci
+  return fibonacci;
 }
 
-function nthFibonacci(n){
+function nthFibonacci(n) {
   return +(
-    1 /
-    Math.sqrt(5)*(((1 + Math.sqrt(5)) / 2) ** n - ((1 - Math.sqrt(5)) / 2) ** n)
-  ).toFixed(2)
+    (1 / Math.sqrt(5)) *
+    (((1 + Math.sqrt(5)) / 2) ** n - ((1 - Math.sqrt(5)) / 2) ** n)
+  ).toFixed(2);
 
   //formula of finding nth fibonacci number.
 }
 
-function isFibonacci(n){
+function isFibonacci(n) {
   if (
     Number.isInteger(Math.sqrt(5 * n ** 2 + 4)) ||
     Number.isInteger(Math.sqrt(5 * n ** 2 - 4))
@@ -46,11 +46,56 @@ function isFibonacci(n){
     return true;
 }
 
-// function printPrimeNumbers(limit){
-//   for(let i=1; i<=Math.sqrt(limit); i+=2){
+function printPrimeNumbers(limit) {
+  console.log(2);
+  for (let i = 3; i <= limit; i += 2) {
+    let isPrime = true;
+    for (let k = 2; k <= Math.sqrt(i); k++) {
+      if (i % k === 0) {
+        isPrime = false;
+        break;
+      }
+    }
 
-//   }
+    if (isPrime) {
+      console.log(i);
+    }
+  }
+}
+
+
+
+function calculatePrimeSumTillLimit(limit) {
+  let sum = 2
+  // 2 represent initial prime
+  for (let i = 3; i <= limit; i += 2) {
+    let isPrime = true;
+    for (let k = 2; k <= Math.sqrt(i); k++) {
+      if (i % k === 0) {
+        isPrime = false;
+        break;
+      }
+    }
+
+    if (isPrime) {
+      sum+=i
+    }
+  }
+  return sum
+}
+
+
+// function areTwinPrimes(a,b){
+//   if(a<=1||b<=1) return
+//   for(let i=2;i<=Math.sqrt) 
 // }
+
+
+
+
+
+
+
 
 
 
