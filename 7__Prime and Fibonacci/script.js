@@ -104,15 +104,45 @@ function printFibonacciToLimit(limit) {
   }
 }
 
-// function generateFibonacciWithinRange(start, end) {
-//   const fibonacci = [];
+function generateFibonacciWithinRange(start, end) {
+  for (let i = start; i <= end; i++) {
+    if (
+      Number.isInteger(Math.sqrt(5 * i ** 2 + 4)) ||
+      Number.isInteger(Math.sqrt(5 * i ** 2 - 4))
+    ) {
+      console.log(i);
+    }
+  }
+}
 
-  
-
-//   fibonacci.push(startingFirst, startingSecond);
-
-//   return fibonacci;
+// function sumOfEvenFibonacciNumbersUpToNTerms(n){
+//   // let sum = 0
+//   const nthFibonacci =
+//     Math.round((((1 + Math.sqrt(5)) / 2) ** n - ((1 - Math.sqrt(5)) / 2) ** n)/Math.sqrt(5))
+//     for(let i=0; i<=nthFibonacci; i++){
+//       if(Number.isInteger(Math.sqrt((5*i**2)+1))||Number.isInteger(Math.sqrt((5*i**2)-1))){
+//         // if(i%2===0){
+//         //   sum+=i
+//         // }
+//         console.log(i);
+//       }
+//     }
+//     // return sum
 // }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
