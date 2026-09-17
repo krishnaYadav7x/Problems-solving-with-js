@@ -63,10 +63,8 @@ function printPrimeNumbers(limit) {
   }
 }
 
-
-
 function calculatePrimeSumTillLimit(limit) {
-  let sum = 2
+  let sum = 2;
   // 2 represent initial prime
   for (let i = 3; i <= limit; i += 2) {
     let isPrime = true;
@@ -78,24 +76,43 @@ function calculatePrimeSumTillLimit(limit) {
     }
 
     if (isPrime) {
-      sum+=i
+      sum += i;
     }
   }
-  return sum
+  return sum;
 }
 
+function areTwinPrime(a, b) {
+  if (a <= 1 || b <= 1) return false;
+  for (let i = 2; i <= Math.sqrt(a); i++) {
+    if (a % i === 0) return false;
+  }
+  for (let i = 2; i <= Math.sqrt(b); i++) {
+    if (b % i === 0) return false;
+  }
+  return Math.abs(a - b === 2);
+}
 
-// function areTwinPrimes(a,b){
-//   if(a<=1||b<=1) return
-//   for(let i=2;i<=Math.sqrt) 
+function printFibonacciToLimit(limit) {
+  let fibonacci = [0, 1];
+  let length = fibonacci.length;
+  for (let i = 1; i <= limit - length; i++) {
+    if (fibonacci[i] + fibonacci[i - 1] > limit) {
+      return fibonacci;
+    }
+    fibonacci.push(fibonacci[i] + fibonacci[i - 1]);
+  }
+}
+
+// function generateFibonacciWithinRange(start, end) {
+//   const fibonacci = [];
+
+  
+
+//   fibonacci.push(startingFirst, startingSecond);
+
+//   return fibonacci;
 // }
-
-
-
-
-
-
-
 
 
 
