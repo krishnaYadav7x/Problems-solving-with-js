@@ -115,34 +115,40 @@ function generateFibonacciWithinRange(start, end) {
   }
 }
 
-// function sumOfEvenFibonacciNumbersUpToNTerms(n){
-//   // let sum = 0
-//   const nthFibonacci =
-//     Math.round((((1 + Math.sqrt(5)) / 2) ** n - ((1 - Math.sqrt(5)) / 2) ** n)/Math.sqrt(5))
-//     for(let i=0; i<=nthFibonacci; i++){
-//       if(Number.isInteger(Math.sqrt((5*i**2)+1))||Number.isInteger(Math.sqrt((5*i**2)-1))){
-//         // if(i%2===0){
-//         //   sum+=i
-//         // }
-//         console.log(i);
-//       }
-//     }
-//     // return sum
-// }
+function sumOfEvenFibonacciNumbersUpToNTerms(n) {
+  let sum = 0;
+  const nthFibonacci = Math.round(
+    (((1 + Math.sqrt(5)) / 2) ** n - ((1 - Math.sqrt(5)) / 2) ** n) /
+      Math.sqrt(5),
+  );
+  for (let i = 0; i <= nthFibonacci; i++) {
+    if (
+      Number.isInteger(Math.sqrt(5 * i ** 2 + 4)) ||
+      Number.isInteger(Math.sqrt(5 * i ** 2 - 4))
+    ) {
+      if (i % 2 === 0) {
+        sum += i;
+      }
+    }
+  }
+  return sum;
+}
 
+function isFibonacciSumIsPrime(a, b) {
+  if (
+    (Number.isInteger(Math.sqrt(5 * a ** 2 + 4)) ||
+      Number.isInteger(Math.sqrt(5 * a ** 2 - 4))) &&
+    (Number.isInteger(Math.sqrt(5 * b ** 2 + 4)) ||
+      Number.isInteger(Math.sqrt(5 * b ** 2 - 4)))
+  ) {
+    let sum = a + b;
 
-
-
-
-
-
-
-
-
-
-
-
-
+    for (let i = 2; i <= Math.sqrt(sum); i++) {
+      if (sum % i === 0) return false;
+    }
+    return true;
+  }
+}
 
 
 
