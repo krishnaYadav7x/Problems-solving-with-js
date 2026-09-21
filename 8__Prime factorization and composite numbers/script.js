@@ -43,9 +43,57 @@ function factorizationInExponentForm(n) {
 }
 
 
+function distinctPrimeFactor(n){
+  let number = n
+  const factors = []
+  while(number%2===0){
+    factors.push(2)
+    number/=2
+  }
+  for(let i=3; i<=Math.sqrt(number); i+=2){
+    while(number%i===0){
+      factors.push(i)
+      number/=i
+    }
+  }
+  if(number>1){
+    factors.push(number)
+  }
+  for(let i=0; i<factors.length; i++){
+    if(factors.includes(factors[i]) ){
+      factors.splice(i, 1);
+    }
+      
+    
+  }
+  return factors
+}
 
-
-
+function powerfulNumber(n) {
+  let number = n;
+  
+  const factors = {}
+  while (number % 2 === 0) {
+    factors[2]?factors[2]++:factors[2]=1
+    number /= 2;
+  }
+  for (let i = 3; i <= Math.sqrt(number); i += 2) {
+    while (number % i === 0) {
+      factors[i]?factors[i]++:factors[i]=1
+      number /= i;
+    }
+  }
+  if (number > 1) {
+    factors[number]=1
+  }
+  
+  for(let keys in factors){
+    if(factors[keys]>=2){
+      return 'Powerful number'
+    }
+  }
+  return 'Not powerful'
+}
 
 
 
