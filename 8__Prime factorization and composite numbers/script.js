@@ -142,13 +142,23 @@ function distinctPrimeFactorProduct(n) {
   return product;
 }
 
-
+function isPrimeNumber(n) {
+  if (n <= 1) return;
+  if (n === 2) return true;
+  if (n % 2 === 0) return false;
+  for (let i = 3; i <= Math.sqrt(n); i += 2) {
+    if (n % i === 0) return false;
+  }
+  return true;
+}
 
 function isSmithNumber(n) {
+  if (n === 1) return;
+  if (isPrimeNumber(n)) return;
   let number = n;
   let number2 = n;
   let sumOfDigits = 0;
-  while (number2 >= 1) {
+  while (number2 > 0) {
     sumOfDigits += number2 % 10;
     console.log(number2 % 10);
     number2 = Math.floor(number2 / 10);
@@ -170,10 +180,10 @@ function isSmithNumber(n) {
   }
 
   for (let n of factors) {
-    if(n%10>=1){
-      while(n%10>=1){
-        sumOfPrime+=n%10
-        n=Math.floor(n/10)
+    if (n % 10 > 0) {
+      while (n % 10 > 0) {
+        sumOfPrime += n % 10;
+        n = Math.floor(n / 10);
       }
     }
 
@@ -182,4 +192,35 @@ function isSmithNumber(n) {
   console.log(sumOfDigits, sumOfPrime);
   return sumOfDigits === sumOfPrime;
 }
-//composite check have to apply 
+
+// function isUglyNumber(n) {
+//   let primeObj = {};
+//   let number = n;
+//   while (number % 2 === 0) {
+//     primeObj[2] ? primeObj[2]++ : (primeObj[2] = 1);
+//     number /= 2;
+//   }
+//   for (let i = 3; i <= Math.sqrt(number); i += 2) {
+//     if (number % i === 0) {
+//       primeObj[i] ? primeObj[i]++ : (primeObj[i] = 1);
+//     }
+//     number /= i;
+//   }
+//   if(number>1)primeObj[number]=1
+//   for(const key in primeObj){
+//     if(key===2||key===3||key===5){
+//       if (primeObj[key] === 1) return true;
+//     }
+    
+//   }
+//   return false
+// }
+
+
+
+
+
+
+
+
+
