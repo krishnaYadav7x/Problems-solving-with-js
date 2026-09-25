@@ -193,28 +193,74 @@ function isSmithNumber(n) {
   return sumOfDigits === sumOfPrime;
 }
 
-// function isUglyNumber(n) {
-//   let primeObj = {};
-//   let number = n;
-//   while (number % 2 === 0) {
-//     primeObj[2] ? primeObj[2]++ : (primeObj[2] = 1);
-//     number /= 2;
-//   }
-//   for (let i = 3; i <= Math.sqrt(number); i += 2) {
-//     if (number % i === 0) {
-//       primeObj[i] ? primeObj[i]++ : (primeObj[i] = 1);
-//     }
-//     number /= i;
-//   }
-//   if(number>1)primeObj[number]=1
-//   for(const key in primeObj){
-//     if(key===2||key===3||key===5){
-//       if (primeObj[key] === 1) return true;
-//     }
+function isUglyNumber(n) {
+  let primeObj = {};
+  let number = n;
+  while (number % 2 === 0) {
+    primeObj[2] ? primeObj[2]++ : (primeObj[2] = 1);
+    number /= 2;
+  }
+  for (let i = 3; i <= Math.sqrt(number); i += 2) {
+    if (number % i === 0) {
+      primeObj[i] ? primeObj[i]++ : (primeObj[i] = 1);
+    }
+    number /= i;
+  }
+  if(number>1)primeObj[number]=1
+  for(const key in primeObj){
+    if(key==='2'||key==='3'||key==='5'){
+      if (primeObj[key] === 1) return true;
+    }
     
-//   }
-//   return false
-// }
+  }
+  return false
+}
+
+
+
+
+function isKaprekar(n) {
+  let square = n ** 2;
+  let digitsSum = 0
+  const numLength = n.toString().length;
+  const divisor = 10 ** numLength;
+
+  while (square > 0) {
+    digitsSum += square % divisor;
+    square = Math.floor(square / divisor);
+  }
+  return n===digitsSum
+}
+
+
+function isHappyNum(n){   //19
+  let number = n
+  let number2 = 0
+  while(number!==1){
+    while(number>0){
+     
+      
+      number2 += (number%10)**2
+      number = Math.floor(number/10)
+    }
+    if(number2<0)return
+    number= number2
+    number2=0
+  }
+  return number===1
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
