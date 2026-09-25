@@ -233,22 +233,22 @@ function isKaprekar(n) {
 }
 
 
-function isHappyNum(n){   //19
-  let number = n
-  let number2 = 0
-  while(number!==1){
-    while(number>0){
+// function isHappyNum(n){   //19
+//   let number = n
+//   let number2 = 0
+//   while(number!==1){
+//     while(number>0){
      
       
-      number2 += (number%10)**2
-      number = Math.floor(number/10)
-    }
-    if(number2<0)return
-    number= number2
-    number2=0
-  }
-  return number===1
-}
+//       number2 += (number%10)**2
+//       number = Math.floor(number/10)
+//     }
+//     if(number2<0)return
+//     number= number2
+//     number2=0
+//   }
+//   return number===1
+// }
 
 
 
