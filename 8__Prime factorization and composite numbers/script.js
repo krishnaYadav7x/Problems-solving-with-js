@@ -233,24 +233,24 @@ function isKaprekar(n) {
 }
 
 
-// function isHappyNum(n){   //19
-//   let number = n
-//   let number2 = 0
-//   while(number!==1){
-//     while(number>0){
-     
-      
-//       number2 += (number%10)**2
-//       number = Math.floor(number/10)
-//     }
-//     if(number2<0)return
-//     number= number2
-//     number2=0
-//   }
-//   return number===1
-// }
+function isHappyNumber(n){                                            
+  let number = n
+  const storedNums = []
+  let digitsSum = 0
+  while(number!==1){
+    while(number>0){
+      digitsSum+=(number%10)**2
+      number = Math.floor(number/10)
+    }
+    if(storedNums.includes(digitsSum))return false
+    storedNums.push(digitsSum)
+    number = digitsSum
+    digitsSum=0
+  }
+  return true
+}
 
-
+console.log(isHappyNumber(79));
 
 
 
