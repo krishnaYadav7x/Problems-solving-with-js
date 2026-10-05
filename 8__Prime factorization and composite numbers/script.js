@@ -253,12 +253,27 @@ function isHappyNumber(n){
 console.log(isHappyNumber(79));
 
 
+function binaryToDecimal(n){
+  let number = n
+  const  binaryDigitsArray = []
+  let decimalNumber = 0
+  while (number > 0) {
+    binaryDigitsArray.push(number%10);
+    number = Math.floor(number/10)
+  }
+  for(let i=0; i<binaryDigitsArray.length; i++){
+    decimalNumber+=(binaryDigitsArray[i]*2**(binaryDigitsArray.length-1-i))
+  }
+
+  return decimalNumber
+}
+
+binaryToDecimal("101101");
 
 
-
-
-
-
+function swapVariable(a,b){
+  return {a:a*b/a,b:a*b/b}
+}
 
 
 
