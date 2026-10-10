@@ -75,7 +75,97 @@ function firstNonRepeatingChar(str) {
   }
 }
 
-console.log(firstNonRepeatingChar("aabbcddeff"));
+// console.log(firstNonRepeatingChar("aabbcddeff"));
+
+
+function removeAllDuplicates(input){
+  let output = ''
+  for(let i=0; i<input.length; i++){
+    if(!output.includes(input[i])){
+      output+=input[i]
+    }
+  }
+  return output
+}
+
+// console.log(removeAllDuplicates("programming"));
+
+
+function stringContainOnlyAlphabets(input){
+  for(let i=0; i<input.length; i++){
+    if(!(input[i].charCodeAt()>=65&&input[i].charCodeAt()<=90)){
+      
+      return false
+    }
+  }
+  return true
+}
+
+function reverseWordsInSentence(input){
+  const wordsArray = []
+  let reversedSentence = ''
+  let words = ''
+  for(let i=0; i<=input.length; i++){
+    if(input[i]===' '){
+      wordsArray.push(words)
+      words = ''
+    }else{
+      words+=input[i]
+    }
+    if(i===input.length-1){
+      wordsArray.push(words)
+      words = ''
+    }
+  }
+  for(let i=0; i<wordsArray.length; i++){
+    reversedSentence+=wordsArray[wordsArray.length-1-i]
+    reversedSentence+=' '
+  }
+  return reversedSentence
+}
+
+// console.log(reverseWordsInSentence("I love coding"));
+
+
+function longestWordsInSentence(input) {
+  const wordsArray = [];
+  let index  = -Infinity
+
+  let words = "";
+  for (let i = 0; i <= input.length; i++) {
+    if (input[i] === " ") {
+      wordsArray.push(words);
+      words = "";
+    } else {
+      words += input[i];
+    }
+    if (i === input.length - 1) {
+      wordsArray.push(words);
+      words = "";
+    }
+  }
+  for(let i=0; i<wordsArray.length; i++){
+    if(wordsArray.length>index){
+      index = i
+    }
+  }
+  return wordsArray[index]
+}
+
+// console.log(longestWordsInSentence("coding is beautiful"))
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
