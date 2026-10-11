@@ -77,59 +77,55 @@ function firstNonRepeatingChar(str) {
 
 // console.log(firstNonRepeatingChar("aabbcddeff"));
 
-
-function removeAllDuplicates(input){
-  let output = ''
-  for(let i=0; i<input.length; i++){
-    if(!output.includes(input[i])){
-      output+=input[i]
+function removeAllDuplicates(input) {
+  let output = "";
+  for (let i = 0; i < input.length; i++) {
+    if (!output.includes(input[i])) {
+      output += input[i];
     }
   }
-  return output
+  return output;
 }
 
 // console.log(removeAllDuplicates("programming"));
 
-
-function stringContainOnlyAlphabets(input){
-  for(let i=0; i<input.length; i++){
-    if(!(input[i].charCodeAt()>=65&&input[i].charCodeAt()<=90)){
-      
-      return false
+function stringContainOnlyAlphabets(input) {
+  for (let i = 0; i < input.length; i++) {
+    if (!(input[i].charCodeAt() >= 65 && input[i].charCodeAt() <= 90)) {
+      return false;
     }
   }
-  return true
+  return true;
 }
 
-function reverseWordsInSentence(input){
-  const wordsArray = []
-  let reversedSentence = ''
-  let words = ''
-  for(let i=0; i<=input.length; i++){
-    if(input[i]===' '){
-      wordsArray.push(words)
-      words = ''
-    }else{
-      words+=input[i]
+function reverseWordsInSentence(input) {
+  const wordsArray = [];
+  let reversedSentence = "";
+  let words = "";
+  for (let i = 0; i <= input.length; i++) {
+    if (input[i] === " ") {
+      wordsArray.push(words);
+      words = "";
+    } else {
+      words += input[i];
     }
-    if(i===input.length-1){
-      wordsArray.push(words)
-      words = ''
+    if (i === input.length - 1) {
+      wordsArray.push(words);
+      words = "";
     }
   }
-  for(let i=0; i<wordsArray.length; i++){
-    reversedSentence+=wordsArray[wordsArray.length-1-i]
-    reversedSentence+=' '
+  for (let i = 0; i < wordsArray.length; i++) {
+    reversedSentence += wordsArray[wordsArray.length - 1 - i];
+    reversedSentence += " ";
   }
-  return reversedSentence
+  return reversedSentence;
 }
 
 // console.log(reverseWordsInSentence("I love coding"));
 
-
 function longestWordsInSentence(input) {
   const wordsArray = [];
-  let index  = -Infinity
+  let index = -Infinity;
 
   let words = "";
   for (let i = 0; i <= input.length; i++) {
@@ -144,25 +140,39 @@ function longestWordsInSentence(input) {
       words = "";
     }
   }
-  for(let i=0; i<wordsArray.length; i++){
-    if(wordsArray.length>index){
-      index = i
+  for (let i = 0; i < wordsArray.length; i++) {
+    if (wordsArray.length > index) {
+      index = i;
     }
   }
-  return wordsArray[index]
+  return wordsArray[index];
 }
 
 // console.log(longestWordsInSentence("coding is beautiful"))
 
+function findAllSubStrings(input) {
+  let subString = "";
+  for (let i = 0; i < input.length; i++) {
+    for (let j = i; j < input.length; j++) {
+      subString += input[j];
+      console.log(subString);
+    }
+    subString = "";
+  }
+}
 
-
-
-
-
-
-
-
-
+// function compressAstring(str) {
+//   let output = "";
+//   let count = 1
+//   for(let i=0; i<str.length; i++){
+//     if(!output.includes(str[i])){
+//       output+=str[i]
+//     }else{
+//       count+=1
+//     }
+//     output+=count
+//   }
+// }
 
 
 
