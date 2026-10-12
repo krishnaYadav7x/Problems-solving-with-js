@@ -161,19 +161,19 @@ function findAllSubStrings(input) {
   }
 }
 
-// function compressAstring(str) {
-//   let output = "";
-//   let count = 1
-//   for(let i=0; i<str.length; i++){
-//     if(!output.includes(str[i])){
-//       output+=str[i]
-//     }else{
-//       count+=1
-//     }
-//     output+=count
-//   }
-// }
-
+function compressString(str){
+  let output = ''
+  const obj = {}
+  for(let i=0; i<str.length;i++){
+    obj[str[i]]?obj[str[i]]++:obj[str[i]] = 1
+  }
+  for(const key in obj){
+    output+=key
+    output+=obj[key]
+  }
+  return output
+}
+console.log(compressString("aaabbccccd"));
 
 
 
