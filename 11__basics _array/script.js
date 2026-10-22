@@ -22,3 +22,75 @@ function  mergeTwoArraysWithoutUsingConcatOrSpread(arr1,arr2){
   }
   return mergedArr
 }
+
+function findSecondLargest(input){
+  let firstLargest = -Infinity
+  let secondLargest 
+  for(const num of input){
+    if (num > firstLargest) {
+      secondLargest = firstLargest;
+      firstLargest = num;
+    }
+  }
+  return secondLargest
+}
+
+function areTwoArraysEqual(arr1,arr2){
+  if(arr1.length!==arr2.length)return false
+  for(const num of arr1){
+    if(arr1[num]!==arr2[num])return false
+  }
+  return true
+}
+
+function countEvenAndOddInArray(arr){
+  let even = 0
+  let odd = 0
+  for(const num of arr){
+    if(num%2===0){
+      even+=1
+    }else{
+      odd+=1
+    }
+  }
+  return {even,odd}
+}
+
+// function findAllUniquePairsWhoseSumEqualTarget(input,target){
+//   let output = []
+
+//   for(let i=0; i<input.length; i++){
+//     for(let j=0; j<input.length; j++){
+//       if (input[i] + input[j] !== target) {
+//         break
+//       }else{
+//         pairs.push(input[i]);
+//         pairs.push(input[j]);
+//       }
+//       if(pairs.length===2){
+//         output.push(pairs);
+       
+//       }
+//        pairs.length = 0;
+//     }
+    
+//   }
+//   return output
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
