@@ -78,6 +78,24 @@ function countEvenAndOddInArray(arr){
 //   return output
 // }
 
+function leftShiftArrayByOnePosition(array){
+  for (let i = 0; i < 1; i++) {
+    array.push(array[i]);
+    array.splice(0, 1);
+  }
+  return array
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
