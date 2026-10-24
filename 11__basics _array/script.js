@@ -86,7 +86,13 @@ function leftShiftArrayByOnePosition(array){
   return array
 }
 
-
+function countHowManyTimesAnElementAppearInArray(el,arr){
+  let obj = {}
+  for(let i=0; i<arr.length; i++){
+    obj[arr[i]] ? obj[arr[i]]++ : obj[arr[i]]=1
+  }
+  return obj[el]
+}
 
 
 
